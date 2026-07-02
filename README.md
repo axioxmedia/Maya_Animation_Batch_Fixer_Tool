@@ -2,7 +2,7 @@
 
 **Production-grade batch animation scanning, validation, correction, retargeting & FBX export toolkit for Autodesk Maya 2024.**
 
-Designed for game animation pipelines (Unreal Engine 5 ready). Specializes in high-fidelity retargeting from SMPL-H / mocap-style sources to MetaHuman-style or custom skeletons, with industry-leading attention to natural arm, palm, finger, and two-hand interaction quality.
+Designed for game animation pipelines (Unreal Engine 5.6 or above). Specializes in high-fidelity retargeting from SMPL-H / mocap-style sources to MetaHuman-style or custom skeletons, with industry-leading attention to natural arm, palm, finger, and two-hand interaction quality.
 
 Developed by **Axiox Media Technology Limited** (Hong Kong) for internal use on titles like *Kepler 186F*.
 

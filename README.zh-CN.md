@@ -4,7 +4,7 @@
 
 专为游戏动画管线（Unreal Engine 5 就绪）设计。专注于从 SMPL-H / 动捕风格源骨架到 MetaHuman 风格或自定义骨架的高保真重定向，尤其在手臂、手掌、手指及双手交互的自然度上进行了大量优化。
 
-由 **香港安溯媒体技术有限公司 (Axiox Media Technology Limited)** 内部开发，用于《Kepler 186F》等项目。
+由 **香港安溯媒体技术有限公司 (Axiox Media Technology Limited)** 内部开发，用于《凯普勒 186F》等项目。
 
 ---
 

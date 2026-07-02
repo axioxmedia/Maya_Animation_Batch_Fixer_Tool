@@ -1,0 +1,495 @@
+{
+    "description": "Root-motion variant. Maps target root to source Pelvis because SMPL-H source has no separate root joint. Use only when the source Pelvis carries world/root motion.",
+    "source_file": "smplh_Tpose.fbx",
+    "target_file": "FemaleStd_CombinedSkelMesh1.FBX",
+    "source_hierarchy_summary": "Reference > Pelvis. Reference is a Null; Pelvis is the first source joint.",
+    "target_hierarchy_summary": "FemaleStd_CombinedSkelMesh1 > root > pelvis. FemaleStd_CombinedSkelMesh1 is a Null; root is the first target joint.",
+    "recommended_maya_tool_settings": {
+        "force_frame_rate": true,
+        "target_frame_rate": 30.0,
+        "retarget_maintain_offset": true,
+        "retarget_use_point_constraint_for_root": false,
+        "retarget_use_point_constraint_for_pelvis": true,
+        "validate_required_bones": false,
+        "correction_enabled": false,
+        "bake_sample_by": 1.0,
+        "retarget_rotate_order": "xyz",
+        "notes": [
+            "v1.2.3: HumanIK post-refine limbs is OFF by default because v1.2.2 over-pulled this skeleton pair. Use HumanIK + root align first.",
+            "v1.2.2 adds post-HumanIK limb refinement for hands/feet/knee/elbow pole direction; keep enabled for SMPL-H -> FemaleStd.",
+            "v1.0.6 safe defaults for SMPL-H -> FemaleStd.",
+            "Default retarget method is local_matrix_delta because it reads Maya joint local matrices including FBX jointOrient/pre-rotation data.",
+            "Source Skeleton File/rest pose is required; packaged preset includes smplh_Tpose.fbx.",
+            "If target stays near A-pose, switch matrix_delta_order from rest_inv_current to current_rest_inv and retest one file.",
+            "Correction is OFF for first-pass validation; enable it only after base retarget looks correct."
+        ],
+        "retarget_method": "humanik_batch",
+        "retarget_use_source_rest_file": true,
+        "retarget_copy_pelvis_translation": true,
+        "retarget_translation_scale": 1.0,
+        "delete_source_after_bake": true,
+        "fail_if_no_target_animation": true,
+        "export_selected_target_only": true,
+        "export_force_key_target_joints": true,
+        "auto_find_source_rest_file": true,
+        "require_source_rest_for_matrix_delta": true,
+        "matrix_delta_order": "target_rest_delta",
+        "export_enabled": true,
+        "retarget_enabled": true,
+        "skip_bad_files_before_retarget": false,
+        "auto_retarget_fallback": false,
+        "humanik_post_align_root": true,
+        "humanik_post_align_use_pelvis": true,
+        "humanik_post_align_use_floor": true,
+        "humanik_post_align_strength": 1.0,
+        "humanik_post_align_floor_weight": 0.25,
+        "humanik_post_refine_limbs": false,
+        "humanik_post_refine_hands": false,
+        "humanik_post_refine_feet": false,
+        "humanik_post_refine_poles": false,
+        "humanik_post_refine_strength": 0.0,
+        "humanik_post_refine_arm_strength": 0.0,
+        "humanik_post_refine_leg_strength": 0.0,
+        "humanik_post_refine_pole_strength": 0.0
+    },
+    "joints": {
+        "root": "Pelvis",
+        "pelvis": "Pelvis",
+        "spine_01": "Spine1",
+        "spine_02": "Spine2",
+        "spine_03": "Spine3",
+        "neck_01": "Neck",
+        "head": "Head",
+        "clavicle_l": "L_Collar",
+        "upperarm_l": "L_Shoulder",
+        "lowerarm_l": "L_Elbow",
+        "hand_l": "L_Wrist",
+        "clavicle_r": "R_Collar",
+        "upperarm_r": "R_Shoulder",
+        "lowerarm_r": "R_Elbow",
+        "hand_r": "R_Wrist",
+        "thigh_l": "L_Hip",
+        "calf_l": "L_Knee",
+        "foot_l": "L_Ankle",
+        "ball_l": "L_Foot",
+        "thigh_r": "R_Hip",
+        "calf_r": "R_Knee",
+        "foot_r": "R_Ankle",
+        "ball_r": "R_Foot"
+    },
+    "aliases": {
+        "root": [
+            "Pelvis",
+            "Reference"
+        ],
+        "pelvis": [
+            "Pelvis"
+        ],
+        "spine_01": [
+            "Spine1"
+        ],
+        "spine_02": [
+            "Spine2"
+        ],
+        "spine_03": [
+            "Spine3"
+        ],
+        "neck_01": [
+            "Neck"
+        ],
+        "head": [
+            "Head"
+        ],
+        "clavicle_l": [
+            "L_Collar"
+        ],
+        "upperarm_l": [
+            "L_Shoulder"
+        ],
+        "lowerarm_l": [
+            "L_Elbow"
+        ],
+        "hand_l": [
+            "L_Wrist"
+        ],
+        "clavicle_r": [
+            "R_Collar"
+        ],
+        "upperarm_r": [
+            "R_Shoulder"
+        ],
+        "lowerarm_r": [
+            "R_Elbow"
+        ],
+        "hand_r": [
+            "R_Wrist"
+        ],
+        "thigh_l": [
+            "L_Hip"
+        ],
+        "calf_l": [
+            "L_Knee"
+        ],
+        "foot_l": [
+            "L_Ankle"
+        ],
+        "ball_l": [
+            "L_Foot"
+        ],
+        "thigh_r": [
+            "R_Hip"
+        ],
+        "calf_r": [
+            "R_Knee"
+        ],
+        "foot_r": [
+            "R_Ankle"
+        ],
+        "ball_r": [
+            "R_Foot"
+        ]
+    },
+    "offsets": {
+        "upperarm_l": {
+            "rotate": [
+                0,
+                0,
+                0
+            ]
+        },
+        "upperarm_r": {
+            "rotate": [
+                0,
+                0,
+                0
+            ]
+        },
+        "lowerarm_l": {
+            "rotate": [
+                0,
+                0,
+                0
+            ]
+        },
+        "lowerarm_r": {
+            "rotate": [
+                0,
+                0,
+                0
+            ]
+        },
+        "neck_01": {
+            "rotate": [
+                0,
+                0,
+                0
+            ]
+        },
+        "head": {
+            "rotate": [
+                0,
+                0,
+                0
+            ]
+        }
+    },
+    "target_bones_intentionally_not_directly_mapped": [
+        "root",
+        "spine_04",
+        "spine_05",
+        "neck_02",
+        "upperarm_twist_01_l",
+        "upperarm_twist_02_l",
+        "lowerarm_twist_01_l",
+        "lowerarm_twist_02_l",
+        "upperarm_twist_01_r",
+        "upperarm_twist_02_r",
+        "lowerarm_twist_01_r",
+        "lowerarm_twist_02_r",
+        "all target correctiveRoot/bulge/side/in/out/fwd/bck/helper bones"
+    ],
+    "manual_confirmation_required": [
+        "Confirm whether they need root motion baked on target root. If yes, test the root-motion mapping variant.",
+        "Confirm whether finger animation must be exported. The current ALPHABatchAnimationTool.py retarget loop is body-focused and does not bake explicit finger pairs unless the script is extended.",
+        "Confirm coordinate system/orientation using one good animation and one bad animation before processing the full dataset."
+    ],
+    "generated_for_tool_version": "1.2.3",
+    "axis_remap": {
+        "root": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "pelvis": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "spine_01": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "spine_02": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "spine_03": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "neck_01": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "head": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "clavicle_l": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "upperarm_l": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "lowerarm_l": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "hand_l": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "clavicle_r": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "upperarm_r": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "lowerarm_r": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "hand_r": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "thigh_l": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "calf_l": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "foot_l": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "ball_l": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "thigh_r": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "calf_r": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "foot_r": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        },
+        "ball_r": {
+            "order": [
+                "x",
+                "y",
+                "z"
+            ],
+            "sign": [
+                1,
+                1,
+                1
+            ]
+        }
+    }
+}

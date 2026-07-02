@@ -1,0 +1,16 @@
+ALPHA SMPL-H -> FemaleStd preset v1.0.6
+
+Default method: local_matrix_delta.
+This version reads local joint matrices instead of rotateX/Y/Z only, because some FBX files show a posed skeleton in Maya while rotate channels remain near zero due to jointOrient/pre-rotation data.
+
+First test settings:
+- Source Skeleton File: Presets/SMPLH_FemaleStd/smplh_Tpose.fbx
+- Target Skeleton File: Presets/SMPLH_FemaleStd/FemaleStd_CombinedSkelMesh1.FBX or your own clean FemaleStd target file
+- Mapping JSON: smplh_to_femalestd_body_mapping.json
+- Retarget Method: local_matrix_delta
+- Matrix Delta Order: rest_inv_current
+- Force Frame Rate: ON, Target Frame Rate: 30
+- Correction: OFF
+- Max Files: 1
+
+If target still stays close to A-pose, switch Matrix Delta Order to current_rest_inv and run one file.
